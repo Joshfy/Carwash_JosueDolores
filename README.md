@@ -1,2 +1,2 @@
-# ProyectoPHP
+# ProyectoPHP-JOsueDolores
 Proyecto de clases
