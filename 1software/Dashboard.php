@@ -29,7 +29,7 @@
       </a>
       <a href="./rutas/DashBranch.php">
       <i class='fas fa-shopping-cart'></i>
-        <span>branch offices</span>
+        <span>Agregar Carwash</span>
       </a>
       <a href="#">
         <i class="fas fa-cogs"></i>

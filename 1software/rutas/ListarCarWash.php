@@ -54,32 +54,46 @@
       </a>
 
       <div class="Contenedor">
-        <!-- Agrega tu formulario aquí -->
-        <h2>Formulario para guardar datos en Carwash</h2>
-        <a class="alo" href="ListarCarWash.php">
-        <i ></i>
-        <span>Listar</span>
-      </a>
+      <?php
+require '../conexion.php';
 
-        <form action="GuardarCarWash.php" method="POST">
-            <label for="CarwashID">Carwash ID:</label>
-            <input type="text" id="CarwashID" name="CarwashID"><br>
+// Preparar la consulta SQL para obtener todos los registros de carWash
+$sql = "SELECT * FROM carWash";
 
-            <label for="FirstName"> Name:</label>
-            <input type="text" id="Name" name="Name"><br>
+// Ejecutar la consulta
+$result = $conexion->query($sql);
 
-            <label for="LastName">Address:</label>
-            <input type="text" id="Address" name="Address"><br>
+// Verificar si hay resultados
+if ($result->num_rows > 0) {
+    echo "<h2>Listado de Datos</h2>";
+    echo "<table border='1'>
+            <tr>
+                <th>Carwash ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Telephone</th>
+            </tr>";
 
-            <label for="MiddleName">Email:</label>
-            <input type="text" id="Email" name="Email"><br>
+    // Iterar sobre los resultados y mostrarlos en la tabla
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>
+                <td>" . $row['CarwashID'] . "</td>
+                <td>" . $row['Name'] . "</td>
+                <td>" . $row['Address'] . "</td>
+                <td>" . $row['Email'] . "</td>
+                <td>" . $row['Telephone'] . "</td>
+              </tr>";
+    }
 
-            <label for="Address">Telephone:</label>
-            <input type="text" id="Telephone" name="Telephone"><br>
+    echo "</table>";
+} else {
+    echo "No hay datos en la tabla carWash.";
+}
 
-            <input type="submit" value="Guardar">
-        </form>
-    </div>
+// Cerrar la conexión a la base de datos
+$conexion->close();
+?>
 
       
 
