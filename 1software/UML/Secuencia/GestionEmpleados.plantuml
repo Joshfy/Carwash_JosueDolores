@@ -1,0 +1,7 @@
+@startuml
+actor Administrator
+actor Employee
+Administrator --> Employee: Agregar Empleado
+Employee --> Administrator: Confirmación
+Administrator --> Employee: Asignar Empleado a Sucursal
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+actor Administrator
+actor Client
+Client --> Administrator: Buscar CarWash
+Administrator --> Client: Mostrar Opciones de Servicio
+Client --> Administrator: Seleccionar Servicio
+Administrator --> Client: Solicitar Datos de Cliente
+Client --> Administrator: Proporcionar Datos de Cliente
+Administrator --> Administrator: Validar y Agregar Cliente
+@enduml

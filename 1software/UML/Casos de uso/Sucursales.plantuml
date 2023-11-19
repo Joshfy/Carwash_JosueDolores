@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+
+actor Administrator
+actor Employee
+actor Client
+
+rectangle "Gestión de Sucursales" {
+  Administrator --> (Agregar Sucursal)
+  Administrator --> (Modificar Sucursal)
+  Administrator --> (Asignar Empleado a Sucursal)
+  Client --> (Seleccionar Sucursal)
+}
+@enduml

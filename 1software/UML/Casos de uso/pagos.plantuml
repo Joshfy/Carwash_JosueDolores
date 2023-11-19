@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+
+actor Administrator
+actor Client
+
+rectangle "Gestión de Clientes y Pagos" {
+  Administrator --> (Agregar Cliente)
+  Administrator --> (Modificar Cliente)
+  Administrator --> (Eliminar Cliente)
+  Administrator --> (Registrar Pago)
+  Client --> (Realizar Pedido de Servicio)
+  Client --> (Realizar Pago en Caja)
+}
+@enduml

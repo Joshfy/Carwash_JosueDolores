@@ -1,0 +1,11 @@
+@startuml
+left to right direction
+
+actor Administrator
+actor Client
+
+rectangle "Servicios de Delivery" {
+  Client --> (Solicitar Servicio de Delivery)
+  Administrator --> (Asignar Servicio de Delivery a Cliente)
+}
+@enduml

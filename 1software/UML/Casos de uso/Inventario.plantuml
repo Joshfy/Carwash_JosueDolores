@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+
+actor Administrator
+actor Employee
+
+rectangle "Gestión de Proveedores e Inventario" {
+  Administrator --> (Agregar Proveedor)
+  Administrator --> (Modificar Proveedor)
+  Administrator --> (Eliminar Proveedor)
+  Administrator --> (Registrar Producto en Inventario)
+  Administrator --> (Modificar Producto en Inventario)
+  Administrator --> (Eliminar Producto en Inventario)
+  Employee --> (Realizar Inventario)
+}
+@enduml

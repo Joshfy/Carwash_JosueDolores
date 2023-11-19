@@ -1,0 +1,46 @@
+@startuml
+class Carwash {
+  - CarwashID: int
+  - Name: string
+  - Address: string
+  - Email: string
+  - Telephone: string
+}
+
+class Administrator {
+  - ID: int
+  - FirstName: string
+  - LastName: string
+  - MiddleName: string
+  - Address: string
+  - Phone: string
+  - CarwashID: int
+}
+
+class Employee {
+  - EmployeeID: int
+  - FirstName: string
+  - LastName: string
+  - MiddleName: string
+  - Salary: decimal
+  - Shift: string
+  - Position: string
+  - CarwashID: int
+}
+
+class Client {
+  - ID: int
+  - FirstName: string
+  - LastName: string
+  - MiddleName: string
+  - Address: string
+}
+
+class Payment {
+  - ID: int
+  - Amount: decimal
+  - PaymentType: string
+  - PaymentDate: date
+  - ClientID: int
+}
+@enduml

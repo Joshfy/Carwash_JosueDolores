@@ -1,0 +1,22 @@
+@startuml
+class ServiceDelivery {
+  - ServiceCode: int
+  - Address: string
+  - Price: decimal
+  - DeliveryDate: date
+  - PaymentType: string
+}
+
+class Service {
+  - ID: int
+  - ClientID: int
+  - ServiceDeliveryCode: int
+}
+
+class ServiceWithCost {
+  - ServiceID: int
+  - ClientID: int
+  - ServiceDeliveryCode: int
+  - Cost: decimal
+}
+@enduml

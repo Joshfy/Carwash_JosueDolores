@@ -1,0 +1,18 @@
+@startuml
+class Tokens {
+  - id: int
+  - token: string
+  - utilizado: boolean
+  - fecha_creacion: timestamp
+  - fecha_utilizacion: timestamp
+}
+
+class Users {
+  - id: int
+  - name: string
+  - email: string
+  - password: string
+  - token: string
+  - registration_date: timestamp
+}
+@enduml

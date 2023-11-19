@@ -1,0 +1,16 @@
+@startuml
+class Supplier {
+  - SupplierID: int
+  - Name: string
+  - Address: string
+  - Email: string
+  - Telephone: string
+}
+
+class Inventory {
+  - ProductID: int
+  - Name: string
+  - Quantity: int
+  - SupplierID: int
+}
+@enduml

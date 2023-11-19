@@ -1,0 +1,5 @@
+@startuml
+actor Client
+Client --> Payment: Realizar Pago
+Payment --> Administrator: Registrar Pago
+@enduml

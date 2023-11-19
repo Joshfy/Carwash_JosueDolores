@@ -1,0 +1,7 @@
+@startuml
+actor Administrator
+actor Client
+Administrator --> Client: Asignar Servicio de Delivery
+Client --> ServiceDelivery: Seleccionar Servicio de Delivery
+ServiceDelivery --> Client: Confirmar Servicio de Delivery
+@enduml

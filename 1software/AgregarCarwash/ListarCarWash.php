@@ -25,33 +25,33 @@
         <h4>Josue</h4>
       </div>
       <a href="../Dashboard.php">
-        <i class="fas fa-desktop"></i>
-        <span>Dashboard</span>
-      </a>
-      <a href="#">
+      <i class="fas fa-desktop"></i>
+      <span>Inicio</span>
+    </a>
+    <a href="../AgregarCarwash/DashBranch.php">
       <i class='fas fa-shopping-cart'></i>
-        <span>AgregarCarwash</span>
-      </a>
-      <a href="#">
-        <i class="fas fa-cogs"></i>
-        <span>Component</span>   
-       </a>
-      <a href="#">
-        <i class="fas fa-table"></i>
-        <span>Tables</span>   
-      </a>
-      <a href="#">
-        <i class="fas fa-th"></i>
-        <span>Forms</span>  
-      </a>
-      <a href="#">
-        <i class="fas fa-info-circle"></i>
-        <span>About</span>  
-      </a>
-      <a href="#">
-        <i class="fas fa-sliders-h"></i>
-        <span>Settings</span>  
-      </a>
+      <span>Agregar Carwash</span>
+    </a>
+    <a href="../AgregarAdmin/DashAdmin.php">
+      <i class="fas fa-cogs"></i>
+      <span>Agregar Administrador</span>
+    </a>
+    <a href="#">
+      <i class="fas fa-table"></i>
+      <span>Agregar Empleado</span>
+    </a>
+    <a href="#">
+      <i class="fas fa-th"></i>
+      <span>Agregar Proveedor</span>
+    </a>
+    <a href="#">
+      <i class="fas fa-info-circle"></i>
+      <span>About</span>
+    </a>
+    <a href="#">
+      <i class="fas fa-sliders-h"></i>
+      <span>Settings</span>
+    </a>#
 
       <div class="Contenedor">
       <?php
@@ -73,6 +73,9 @@ if ($result->num_rows > 0) {
                 <th>Address</th>
                 <th>Email</th>
                 <th>Telephone</th>
+                <th>Acciones</th>
+
+
             </tr>";
 
     // Iterar sobre los resultados y mostrarlos en la tabla
@@ -83,6 +86,13 @@ if ($result->num_rows > 0) {
                 <td>" . $row['Address'] . "</td>
                 <td>" . $row['Email'] . "</td>
                 <td>" . $row['Telephone'] . "</td>
+                <td>
+                  <a href='edit.php?id=" . $row['CarwashID'] . "'><i class='hola'></i></a>
+                                &nbsp;
+                                &nbsp;
+                                <a href='eliminar.php?id=" . $row['CarwashID'] . "'><i class='fas fa-trash red-icon'></i></a>
+                  </td>
+                
               </tr>";
     }
 

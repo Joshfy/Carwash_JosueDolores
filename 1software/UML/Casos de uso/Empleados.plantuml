@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+
+actor Administrator
+actor Employee
+actor Client
+
+rectangle "Actividades de Empleados" {
+  Employee --> (Atender Cliente)
+  Employee --> (Realizar Servicio de Lavado)
+  Employee --> (Realizar Servicio de Delivery)
+  Employee --> (Registrar Pago)
+  Administrator --> (Asignar Servicio de Lavado a Empleado)
+  Administrator --> (Asignar Servicio de Delivery a Empleado)
+}
+@enduml

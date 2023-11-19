@@ -1,0 +1,9 @@
+@startuml
+actor Client
+Client --> ServiceDelivery: Seleccionar Servicio de Lavado
+ServiceDelivery --> Client: Confirmar Servicio de Lavado
+Client --> Administrator: Solicitar Asignación de Empleado
+Administrator --> Employee: Asignar Empleado
+Employee --> Employee: Realizar Servicio de Lavado
+Employee --> Client: Servicio Completado
+@enduml

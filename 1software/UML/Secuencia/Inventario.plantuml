@@ -1,0 +1,7 @@
+@startuml
+actor Administrator
+actor Supplier
+Administrator --> Supplier: Agregar Proveedor
+Supplier --> Administrator: Confirmación
+Administrator --> Inventory: Registrar Producto en Inventario
+@enduml

@@ -3,7 +3,7 @@
   <head>
     <title>Sidebar Dashboard CSS Learning</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-      <link rel="stylesheet" href="DashB.css">
+      <link rel="stylesheet" href="DashB.css  ">
     </head>
   <body>
     <div class="dashboard">
@@ -19,39 +19,41 @@
         <a href="#" class="logout_btn">close</a>
       </div>
     </header>
-    <div class="sidebar">
-      <div class="profile-div">
-        <img src="https://i.pinimg.com/736x/f2/b1/61/f2b1618c5c371bdab6073571f6e8b007.jpg" class="profile_image" alt=""/>
-        <h4>Josue</h4>
-      </div>
-      <a href="../Dashboard.php">
+    <section class="General">
+      <div class="sidebar">
+        <div class="profile-div">
+          <img src="https://i.pinimg.com/736x/f2/b1/61/f2b1618c5c371bdab6073571f6e8b007.jpg" class="profile_image" alt=""/>
+          <h4>Josue</h4>
+        </div>
+        <a href="../Dashboard.php">
         <i class="fas fa-desktop"></i>
-        <span>Dashboard</span>
+        <span>Inicio</span>
       </a>
-      <a href="#">
-      <i class='fas fa-shopping-cart'></i>
-        <span>AgregarCarwash</span>
+      <a href="">
+        <i class='fas fa-shopping-cart'></i>
+        <span>Agregar Carwash</span>
       </a>
-      <a href="#">
+      <a href="../AgregarAdmin/DashAdmin.php">
         <i class="fas fa-cogs"></i>
-        <span>Component</span>   
-       </a>
+        <span>Agregar Administrador</span>
+      </a>
       <a href="#">
         <i class="fas fa-table"></i>
-        <span>Tables</span>   
+        <span>Agregar Empleado</span>
       </a>
       <a href="#">
         <i class="fas fa-th"></i>
-        <span>Forms</span>  
+        <span>Agregar Proveedor</span>
       </a>
       <a href="#">
         <i class="fas fa-info-circle"></i>
-        <span>About</span>  
+        <span>About</span>
       </a>
       <a href="#">
         <i class="fas fa-sliders-h"></i>
-        <span>Settings</span>  
+        <span>Settings</span>
       </a>
+      
 
       <div class="Contenedor">
         <!-- Agrega tu formulario aquí -->
@@ -61,7 +63,7 @@
         <span>Listar</span>
       </a>
 
-        <form action="GuardarCarWash.php" method="POST">
+        <form action="ListCarWash.php" method="POST">
             <label for="CarwashID">Carwash ID:</label>
             <input type="text" id="CarwashID" name="CarwashID"><br>
 
@@ -80,8 +82,17 @@
             <input type="submit" value="Guardar">
         </form>
     </div>
+    </div>
 
       
+    <script>
+       document.getElementById("toggleList").addEventListener("click", function() {
+            // Obtiene el elemento con la clase "lista-administradores"
+            var listaAdministradores = document.querySelector(".lista-administradores");
 
+            // Cambia la visibilidad de la lista
+            listaAdministradores.style.display = (listaAdministradores.style.display === "none") ? "block" : "none";
+        });
+    </script>
   </body>
 </html>
