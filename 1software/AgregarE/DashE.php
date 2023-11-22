@@ -89,75 +89,47 @@
               <input type="submit" value="Add Employee">
             </div>
           </div>
-          <p><a href="#" id="toggleList">Listar</a></p>
-        </form>
       </div>
+      </form>
+      <button id="btn-abrir">Abrir modal</button>
 
-      <div class="lista-empleados">
-            <?php
-            require '../conexion.php';
+    <div id="modal" class="modal">
+      <div class="content-modal">
+      <button class="close">Cerrar</button>
 
-            // Preparar la consulta SQL para obtener todos los registros de empleados
-            $sql = "SELECT * FROM Employees";
 
-            // Ejecutar la consulta
-            $result = $conexion->query($sql);
-
-            // Verificar si hay resultados
-            if ($result->num_rows > 0) {
-              echo "<h2>Listado de Empleados</h2>";
-              echo "<table border='1'>
-                    <tr>
-                        <th>Employee ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Middle Name</th>
-                        <th>Salary</th>
-                        <th>Shift</th>
-                        <th>Position</th>
-                        <th>Acciones</th>
-                    </tr>";
-
-              // Iterar sobre los resultados y mostrarlos en la tabla
-              while ($row = $result->fetch_assoc()) {
-                echo "<tr>
-                        <td>" . $row['EmployeeID'] . "</td>
-                        <td>" . $row['FirstName'] . "</td>
-                        <td>" . $row['LastName'] . "</td>
-                        <td>" . $row['MiddleName'] . "</td>
-                        <td>" . $row['Salary'] . "</td>
-                        <td>" . $row['Shift'] . "</td>
-                        <td>" . $row['Position'] . "</td>
-                        <td>
-                            <a href='editar_empleado.php?id=" . $row['EmployeeID'] . "'>Editar</a>
-                            &nbsp;
-                            <a href='eliminar_empleado.php?id=" . $row['EmployeeID'] . "'>Eliminar</a>
-                        </td>
-                    </tr>";
-              }
-
-              echo "</table>";
-            } else {
-              echo "No hay datos en la tabla Employees.";
-            }
-
-            // Cerrar la conexión a la base de datos
-            $conexion->close();
-            ?>
-      </div>
+  </div>
 
     </div>
-    </section>
 
-    <script>
-      document.getElementById("toggleList").addEventListener("click", function() {
-        // Obtiene el elemento con la clase "lista-administradores"
-        var listaEmpleados = document.querySelector(".lista-empleados");
 
-        // Cambia la visibilidad de la lista
-        listaEmpleados.style.display = (listaEmpleados.style.display === "none") ? "block" : "none";
-      });
-    </script>
+
+  </div>
+  </section>
+
+  <script>
+    //Modal
+    const btnAbrir = document.getElementById("btn-abrir");
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
+
+    btnAbrir.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+    ////close modal
+
+    modal.style.display = "none";
+
+    btnAbrir.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+
+    const btnCerrar = document.querySelector(".close");
+
+    btnCerrar.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  </script>
 
 </body>
 

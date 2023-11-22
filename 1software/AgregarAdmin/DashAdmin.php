@@ -90,7 +90,6 @@
               <input type="submit" value="Add Administrator">
             </div>
           </div>
-
         </form>
         <button id="btn-abrir">Abrir modal</button>
 
@@ -176,8 +175,12 @@
               $conexion->close();
               ?>
             </div>
+            
+            
 
           </div>
+          
+      
         </div>
       </div>
 
