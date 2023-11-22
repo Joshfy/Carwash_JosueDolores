@@ -54,58 +54,7 @@
     </a>#
 
       <div class="Contenedor">
-      <?php
-require '../conexion.php';
 
-// Preparar la consulta SQL para obtener todos los registros de carWash
-$sql = "SELECT * FROM carWash";
-
-// Ejecutar la consulta
-$result = $conexion->query($sql);
-
-// Verificar si hay resultados
-if ($result->num_rows > 0) {
-    echo "<h2>Listado de Datos</h2>";
-    echo "<table border='1'>
-            <tr>
-                <th>Carwash ID</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Email</th>
-                <th>Telephone</th>
-                <th>Acciones</th>
-
-
-            </tr>";
-
-    // Iterar sobre los resultados y mostrarlos en la tabla
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr>
-                <td>" . $row['CarwashID'] . "</td>
-                <td>" . $row['Name'] . "</td>
-                <td>" . $row['Address'] . "</td>
-                <td>" . $row['Email'] . "</td>
-                <td>" . $row['Telephone'] . "</td>
-                <td>
-                  <a href='edit.php?id=" . $row['CarwashID'] . "'><i class='hola'></i></a>
-                                &nbsp;
-                                &nbsp;
-                                <a href='eliminar.php?id=" . $row['CarwashID'] . "'><i class='fas fa-trash red-icon'></i></a>
-                  </td>
-                
-              </tr>";
-    }
-
-    echo "</table>";
-} else {
-    echo "No hay datos en la tabla carWash.";
-}
-
-// Cerrar la conexión a la base de datos
-$conexion->close();
-?>
-
-      
 
   </body>
 </html>

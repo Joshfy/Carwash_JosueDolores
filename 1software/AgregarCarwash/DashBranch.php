@@ -58,16 +58,68 @@
       <div class="Contenedor">
         <!-- Agrega tu formulario aquí -->
         <h2>Formulario para guardar datos en Carwash</h2>
-        <button id="btn-abrir">Abrir modal</button>
+        
+        <button id="btn-abrir">Listarl</button>
 
-        <div id="modal" class="modal">
-          <div class="content-modal">
-          <button class="close">Cerrar</button>
+      <div id="modal" class="modal">
+        <div class="content-modal">
+        <button class="close">Cerrar</button>
+        <?php
+require '../conexion.php';
+
+// Preparar la consulta SQL para obtener todos los registros de carWash
+$sql = "SELECT * FROM carWash";
+
+// Ejecutar la consulta
+$result = $conexion->query($sql);
+
+// Verificar si hay resultados
+if ($result->num_rows > 0) {
+    echo "<h2>Listado de Datos</h2>";
+    echo "<table border='1'>
+            <tr>
+                <th>Carwash ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Acciones</th>
 
 
-          </div>
+            </tr>";
+
+    // Iterar sobre los resultados y mostrarlos en la tabla
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>
+                <td>" . $row['CarwashID'] . "</td>
+                <td>" . $row['Name'] . "</td>
+                <td>" . $row['Address'] . "</td>
+                <td>" . $row['Email'] . "</td>
+                <td>" . $row['Telephone'] . "</td>
+                <td>
+            
+                                <a href='eliminar.php?id=" . $row['CarwashID'] . "'><i class='fas fa-trash red-icon'></i></a>
+                  </td>
+                
+              </tr>";
+    }
+
+    echo "</table>";
+} else {
+    echo "No hay datos en la tabla carWash.";
+}
+
+// Cerrar la conexión a la base de datos
+$conexion->close();
+?>
+
+      
+
 
         </div>
+
+          </div>
+      </a>
 
         <form action="ListCarWash.php" method="POST">
             <label for="CarwashID">Carwash ID:</label>
@@ -88,20 +140,13 @@
             <input type="submit" value="Guardar">
         </form>
     </div>
-    </div>
+    
 
       
     <script>
-       document.getElementById("toggleList").addEventListener("click", function() {
-            // Obtiene el elemento con la clase "lista-administradores"
-            var listaAdministradores = document.querySelector(".lista-administradores");
-
-            // Cambia la visibilidad de la lista
-            listaAdministradores.style.display = (listaAdministradores.style.display === "none") ? "block" : "none";
-        });
-
-//Modal
-const btnAbrir = document.getElementById("btn-abrir");
+     
+        //Modal
+  const btnAbrir = document.getElementById("btn-abrir");
   const modal = document.getElementById("modal");
   modal.style.display = "none";
 
@@ -121,7 +166,6 @@ const btnCerrar = document.querySelector(".close");
 btnCerrar.addEventListener("click", () => {
   modal.style.display = "none";
 });
-
 
     </script>
   </body>

@@ -86,17 +86,18 @@
               <p class="neon-number" id="ventas">0</p>
             </div>
           </div>
-
+             
           <button id="btn-abrir">Abrir modal</button>
 
-          <div id="modal" class="modal">
-            <div class="content-modal">
-            <button class="close">Cerrar</button>
+            <div id="modal" class="modal">
+              <div class="content-modal">
+               <button class="close">Cerrar</button>
 
 
+              </div>
+ 
             </div>
 
-          </div>
         </div>
 
           
