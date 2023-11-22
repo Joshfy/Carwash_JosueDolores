@@ -58,10 +58,16 @@
       <div class="Contenedor">
         <!-- Agrega tu formulario aquí -->
         <h2>Formulario para guardar datos en Carwash</h2>
-        <a class="alo" href="ListarCarWash.php">
-        <i ></i>
-        <span>Listar</span>
-      </a>
+        <button id="btn-abrir">Abrir modal</button>
+
+        <div id="modal" class="modal">
+          <div class="content-modal">
+          <button class="close">Cerrar</button>
+
+
+          </div>
+
+        </div>
 
         <form action="ListCarWash.php" method="POST">
             <label for="CarwashID">Carwash ID:</label>
@@ -93,6 +99,30 @@
             // Cambia la visibilidad de la lista
             listaAdministradores.style.display = (listaAdministradores.style.display === "none") ? "block" : "none";
         });
+
+//Modal
+const btnAbrir = document.getElementById("btn-abrir");
+  const modal = document.getElementById("modal");
+  modal.style.display = "none";
+
+  btnAbrir.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+////close modal
+
+modal.style.display = "none";
+
+btnAbrir.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+const btnCerrar = document.querySelector(".close");
+
+btnCerrar.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+
     </script>
   </body>
 </html>

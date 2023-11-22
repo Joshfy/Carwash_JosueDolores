@@ -86,6 +86,17 @@
               <p class="neon-number" id="ventas">0</p>
             </div>
           </div>
+
+          <button id="btn-abrir">Abrir modal</button>
+
+          <div id="modal" class="modal">
+            <div class="content-modal">
+            <button class="close">Cerrar</button>
+
+
+            </div>
+
+          </div>
         </div>
 
           
@@ -135,7 +146,32 @@
 
       animateNumbers(30, 50, 100, 4000);
     });
+    
+    
+//Modal
+  const btnAbrir = document.getElementById("btn-abrir");
+  const modal = document.getElementById("modal");
+  modal.style.display = "none";
+
+  btnAbrir.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+////close modal
+
+modal.style.display = "none";
+
+btnAbrir.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+const btnCerrar = document.querySelector(".close");
+
+btnCerrar.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
   </script>
+  
 
   </body>
 </html>
