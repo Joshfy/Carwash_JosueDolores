@@ -216,10 +216,37 @@ input[type="submit"]:hover {
   background-color: #45a049;
 }
 
-.lista-administradores{
 
-  transform: translate(144%, 487px);
-  max-width: 500px;
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+}
 
+.modal > h1 {
+  text-align: center;
+  padding: 20px;
+}
 
+.content-modal{
+  padding: 20px;
+  transform: translate(149px, 330px);
+  width: 709px;
+  height: 334px;
+  background-color: #c45656;
+  border-radius: 43px;
+  border: solid;
+}
+.modal > .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
 }
