@@ -60,7 +60,10 @@
 
     <div class="Contenedor">
       <div class="content-form">
+      <button id="btn-abrir">Abrir modal</button>
+
         <h2>Add Employees</h2>
+
         <form action="GuardarE.php" method="post" class="Formulario">
           <div class="ContentInput">
             <div class="label1">
@@ -89,18 +92,70 @@
               <input type="submit" value="Add Employee">
             </div>
           </div>
+
+
       </div>
       </form>
-      <button id="btn-abrir">Abrir modal</button>
-
-    <div id="modal" class="modal">
-      <div class="content-modal">
-      <button class="close">Cerrar</button>
-
-
-  </div>
 
     </div>
+    <div id="modal" class="modal">
+  <div class="content-modal">
+  <button class="close">Cerrar</button>
+  <div class="lista-empleados">
+            <?php
+            require '../conexion.php';
+
+            // Preparar la consulta SQL para obtener todos los registros de empleados
+            $sql = "SELECT * FROM Employees";
+
+            // Ejecutar la consulta
+            $result = $conexion->query($sql);
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+              echo "<h2>Listado de Empleados</h2>";
+              echo "<table border='1'>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Middle Name</th>
+                        <th>Salary</th>
+                        <th>Shift</th>
+                        <th>Position</th>
+                        <th>Acciones</th>
+                    </tr>";
+
+              // Iterar sobre los resultados y mostrarlos en la tabla
+              while ($row = $result->fetch_assoc()) {
+                echo "<tr>
+                        <td>" . $row['EmployeeID'] . "</td>
+                        <td>" . $row['FirstName'] . "</td>
+                        <td>" . $row['LastName'] . "</td>
+                        <td>" . $row['MiddleName'] . "</td>
+                        <td>" . $row['Salary'] . "</td>
+                        <td>" . $row['Shift'] . "</td>
+                        <td>" . $row['Position'] . "</td>
+                        <td>
+                            <a href='editar_empleado.php?id=" . $row['EmployeeID'] . "'>Editar</a>
+                            &nbsp;
+                            <a href='eliminar_empleado.php?id=" . $row['EmployeeID'] . "'>Eliminar</a>
+                        </td>
+                    </tr>";
+              }
+
+              echo "</table>";
+            } else {
+              echo "No hay datos en la tabla Employees.";
+            }
+
+            // Cerrar la conexión a la base de datos
+            $conexion->close();
+            ?>
+      </div>
+
+
+</div>
 
 
 
