@@ -242,12 +242,13 @@ input[type="submit"]:hover {
 
 .content-modal{
   padding: 20px;
-  transform: translate(500px, 413px);
-  width: 709px;
-  height: 334px;
+  width: 589px;
+  height: 507px;
   background-color: #c45656;
   border-radius: 43px;
   border: solid;
+  margin: 18%;
+  margin-top: 5%;
 }
 .modal > .close {
   position: absolute;

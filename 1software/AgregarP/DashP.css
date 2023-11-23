@@ -167,7 +167,7 @@ header{
   background-color: #f5f5f5;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transform: translate(-1px, -41%);
+  transform: translate(123px, -6%);
 
 }
 
@@ -235,12 +235,13 @@ input[type="submit"]:hover {
 
 .content-modal{
   padding: 20px;
-  transform: translate(149px, 330px);
-  width: 709px;
-  height: 334px;
+  width: 589px;
+  height: 507px;
   background-color: #c45656;
   border-radius: 43px;
   border: solid;
+  margin: 18%;
+  margin-top: 5%;
 }
 .modal > .close {
   position: absolute;
