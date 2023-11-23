@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="DashP.css">
 </head>
 
-<body>
+<body>zzz
   <div class="dashboard">
     <input type="checkbox" id="check" />
     <header>
@@ -62,7 +62,39 @@
     <div class="Contenedor">
       <div class="content-form">
         <button id="btn-abrir">Abrir modal</button>
-        <div id="modal" class="modal">
+       
+        <h2>Add Supplier</h2>
+
+
+        <form action="GuardaP.php" method="post" class="Formulario">
+          <div class="ContentInput">
+            <div class="label1">
+              <label for="id">ID:</label>
+              <input type="text" id="id" name="id" required>
+
+              <label for="Name">Name:</label>
+              <input type="text" id="Name" name="Name" required>
+
+              <label for="Address">Address:</label>
+              <input type="text" id="Address" name="Address" required>
+
+              <label for="Phone">Phone:</label>
+              <input type="tel" id="Phone" name="Phone" required>
+            </div>
+            <div class="label2">
+              <label for="Email">Email:</label>
+              <input type="email" id="Email" name="Email" required>
+
+              <input type="submit" value="Add Supplier">
+            </div>
+          </div>
+        </form>
+
+
+
+
+      </div>
+      <div id="modal" class="modal">
           <div class="content-modal">
 
             <button class="close">Cerrar</button>
@@ -73,7 +105,7 @@
               // Verificar si se ha enviado el formulario de eliminación
               if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eliminar'])) {
                 $idEliminar = $_POST['id_eliminar'];
-
+	
                 // Lógica de eliminación
                 $sqlEliminar = "DELETE FROM suppliers WHERE id = '$idEliminar'";
                 if ($conexion->query($sqlEliminar) === TRUE) {
@@ -143,43 +175,15 @@
 
 
             </div>
+            
+            
+            
 
 
           </div>
 
 
         </div>
-        <h2>Add Supplier</h2>
-
-
-        <form action="GuardaP.php" method="post" class="Formulario">
-          <div class="ContentInput">
-            <div class="label1">
-              <label for="id">ID:</label>
-              <input type="text" id="id" name="id" required>
-
-              <label for="Name">Name:</label>
-              <input type="text" id="Name" name="Name" required>
-
-              <label for="Address">Address:</label>
-              <input type="text" id="Address" name="Address" required>
-
-              <label for="Phone">Phone:</label>
-              <input type="tel" id="Phone" name="Phone" required>
-            </div>
-            <div class="label2">
-              <label for="Email">Email:</label>
-              <input type="email" id="Email" name="Email" required>
-
-              <input type="submit" value="Add Supplier">
-            </div>
-          </div>
-        </form>
-
-
-
-
-      </div>
 
 
 

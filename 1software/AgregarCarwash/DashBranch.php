@@ -112,21 +112,17 @@ if ($result->num_rows > 0) {
 // Cerrar la conexión a la base de datos
 $conexion->close();
 ?>
-
-      
-
-
         </div>
 
           </div>
       </a>
 
-        <form action="ListCarWash.php" method="POST">
+        <form action="GuardarCarWash.php" method="POST">
             <label for="CarwashID">Carwash ID:</label>
             <input type="text" id="CarwashID" name="CarwashID"><br>
 
             <label for="FirstName"> Name:</label>
-            <input type="text" id="Name" name="Name"><br>
+            <input type="text" hid="Name" name="Name"><br>
 
             <label for="LastName">Address:</label>
             <input type="text" id="Address" name="Address"><br>

@@ -224,10 +224,14 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .content-modal{
-  width: 770px;
-  height: 700px;
-  background-color: #fff;
-  justify-content: center;
+  padding: 20px;
+  width: 589px;
+  height: 507px;
+  background-color: #c45656;
+  border-radius: 43px;
+  border: solid;
+  margin: 18%;
+  margin-top: 5%;
 }
 .modal > .close {
   position: absolute;

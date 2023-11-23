@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Ejecutar la consulta y manejar errores
         if ($stmt->execute()) {
-            header("ListarCarWash.php");
+            header("DashBranch.php");
         } else {
             echo "Error al guardar datos: " . $stmt->error;
         }
