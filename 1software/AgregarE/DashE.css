@@ -216,13 +216,7 @@ input[type="submit"]:hover {
   background-color: #45a049;
 }
 
-.lista-empleados{
 
-  transform: translate(144%, 487px);
-  max-width: 500px;
-
-
-}
 /*MOdal*/
 .modal {
   position: fixed;
