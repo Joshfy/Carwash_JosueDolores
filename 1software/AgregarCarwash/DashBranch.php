@@ -29,45 +29,46 @@
           <h4>Josue</h4>
         </div>
         <a href="../Dashboard.php">
-          <i class="fas fa-desktop"></i>
-          <span>Inicio</span>
-        </a>
-        <a href="../Realizar Ventas/DashVC.php">
-          <i class='fas fa-shopping-cart'></i>
-          <span>Realizar Venta</span>
-        </a>
-        <a href="../AgregarCarwash/DashBranch.php">
-          <i class='fas fa-shopping-cart'></i>
-          <span>Agregar Carwash</span>
-        </a>
-        <a href="../AgregarAdmin/DashAdmin.php">
-          <i class="fas fa-cogs"></i>
-          <span>Agregar Administrador</span>
-        </a>
-        <a href="../AgregarE/DashE.php">
-          <i class="fas fa-table"></i>
-          <span>Agregar Empleado</span>
-        </a>
-        <a href="../AgregarP/DashProv.php">
-          <i class="fas fa-th"></i>
-          <span>Agregar Proveedor</span>
-        </a>
-        <a href="../AgregarAlmacen/DashAlma.php">
-          <i class="fas fa-th"></i>
-          <span>Agregar Almacen</span>
-        </a>
-        <a href="../AgregarInven/DashInven.php">
-          <i class="fas fa-th"></i>
-          <span>Agregar Inventario</span>
-        </a>
-        <a href="#">
-          <i class="fas fa-info-circle"></i>
-          <span>About</span>
-        </a>
-        <a href="#">
-          <i class="fas fa-sliders-h"></i>
-          <span>Settings</span>
-        </a>
+    <i class="fas fa-desktop"></i>
+    <span>Home</span>
+</a>
+<a href="../Realizar Ventas/DashVC.php">
+    <i class='fas fa-shopping-cart'></i>
+    <span>Make Sale</span>
+</a>
+<a href="">
+    <i class='fas fa-shopping-cart'></i>
+    <span>Add Car Wash</span>
+</a>
+<a href="../AgregarAdmin/DashAdmin.php">
+    <i class="fas fa-cogs"></i>
+    <span>Add Administrator</span>
+</a>
+<a href="../AgregarE/DashE.php">
+    <i class="fas fa-table"></i>
+    <span>Add Employee</span>
+</a>
+<a href="../AgregarP/DashProv.php">
+    <i class="fas fa-th"></i>
+    <span>Add Supplier</span>
+</a>
+<a href="../AgregarAlmacen/DashAlma.php">
+    <i class="fas fa-th"></i>
+    <span>Add Warehouse</span>
+</a>
+<a href="../AgregarInven/DashInven.php">
+    <i class="fas fa-th"></i>
+    <span>Add Inventory</span>
+</a>
+<a href="#">
+    <i class="fas fa-info-circle"></i>
+    <span>About</span>
+</a>
+<a href="#">
+    <i class="fas fa-sliders-h"></i>
+    <span>Settings</span>
+</a>
+
 
 
         <div class="Contenedor">
