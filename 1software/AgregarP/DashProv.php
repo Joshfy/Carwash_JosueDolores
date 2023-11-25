@@ -32,11 +32,11 @@
         <i class="fas fa-desktop"></i>
         <span>Inicio</span>
       </a>
-      <a href="../AgregarCarwash/DashBranch.php">
+      <a href="">
         <i class='fas fa-shopping-cart'></i>
         <span>Agregar Carwash</span>
       </a>
-      <a href="./DashAdmin.php">
+      <a href="../AgregarAdmin/DashAdmin.php">
         <i class="fas fa-cogs"></i>
         <span>Agregar Administrador</span>
       </a>
@@ -44,9 +44,17 @@
         <i class="fas fa-table"></i>
         <span>Agregar Empleado</span>
       </a>
-      <a href="#">
+      <a href="../AgregarP/DashProv.php">
         <i class="fas fa-th"></i>
         <span>Agregar Proveedor</span>
+      </a>
+      <a href="../AgregarAlmacen/DashAlma.php">
+        <i class="fas fa-th"></i>
+        <span>Agregar Almacen</span>
+      </a>
+      <a href="../AgregarInven/DashInven.php">
+        <i class="fas fa-th"></i>
+        <span>Agregar Inventario</span>
       </a>
       <a href="#">
         <i class="fas fa-info-circle"></i>
@@ -56,12 +64,14 @@
         <i class="fas fa-sliders-h"></i>
         <span>Settings</span>
       </a>
+      
+
     </div>
 
 
     <div class="Contenedor">
       <div class="content-form">
-        <button id="btn-abrir">Abrir modal</button>
+        <button id="btn-abrir">listar</button>
        
         <h2>Add Supplier</h2>
 
@@ -99,76 +109,81 @@
 
             <button class="close">Cerrar</button>
             <div class="lista-administradores">
-              <?php
-              require '../conexion.php';
+            <?php
+require '../conexion.php';
 
-              // Verificar si se ha enviado el formulario de eliminación
-              if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eliminar'])) {
-                $idEliminar = $_POST['id_eliminar'];
-	
-                // Lógica de eliminación
-                $sqlEliminar = "DELETE FROM suppliers WHERE id = '$idEliminar'";
-                if ($conexion->query($sqlEliminar) === TRUE) {
-                  echo "Registro eliminado correctamente.";
-                } else {
-                  echo "Error al eliminar el registro: " . $conexion->error;
-                }
-              }
+// Verificar si se ha enviado el formulario de eliminación
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eliminar'])) {
+    $idEliminar = $_POST['id_eliminar'];
 
-              // Verificar si se ha enviado el formulario de edición
-              if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_editar'])) {
-                $idEditar = $_POST['id_editar'];
+    // Lógica de eliminación
+    $sqlEliminar = "DELETE FROM suppliers WHERE id = '$idEliminar'";
+    if ($conexion->query($sqlEliminar) === TRUE) {
+        echo "Registro eliminado correctamente.";
+    } else {
+        echo "Error al eliminar el registro: " . $conexion->error;
+    }
+}
 
-                // Redirigir a la página de edición con el ID
-                header("Location: editar_supplier.php?id=$idEditar");
-                exit();
-              }
+// Verificar si se ha enviado el formulario de edición
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_editar'])) {
+    $idEditar = $_POST['id_editar'];
 
-              // Preparar la consulta SQL para obtener todos los registros de proveedores
-              $sql = "SELECT * FROM suppliers";
+    // Redirigir a la página de edición con el ID
+    header("Location: editar_supplier.php?id=$idEditar");
+    exit();
+}
 
-              // Ejecutar la consulta
-              $result = $conexion->query($sql);
+// Preparar la consulta SQL para obtener todos los registros de proveedores
+$sql = "SELECT * FROM suppliers";
 
-              // Verificar si hay resultados
-              if ($result->num_rows > 0) {
-                echo "<h2>Listado de Proveedores</h2>";
-                echo "<table border='1'>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Acciones</th>
-            </tr>";
+// Ejecutar la consulta
+$result = $conexion->query($sql);
 
-                // Iterar sobre los resultados y mostrarlos en la tabla
-                while ($row = $result->fetch_assoc()) {
-                  echo "<tr>
-                <td>" . $row['id'] . "</td>
-                <td>" . $row['Name'] . "</td>
-                <td>" . $row['Address'] . "</td>
-                <td>" . $row['Phone'] . "</td>
-                <td>" . $row['Email'] . "</td>
-                <td>
-                    &nbsp;
-                    <form method='POST' action=''>
-                        <input type='hidden' name='id_eliminar' value='" . $row['id'] . "'>
-                        <button type='submit' name='eliminar'>Eliminar</button>
-                    </form>
-                </td>
-            </tr>";
-                }
+// Verificar si hay resultados
+if ($result->num_rows > 0) {
+    echo "<h2>Listado de Proveedores</h2>";
+    echo "<table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Acciones</th>
+        </tr>";
 
-                echo "</table>";
-              } else {
-                echo "No hay datos en la tabla suppliers.";
-              }
+    // Iterar sobre los resultados y mostrarlos en la tabla
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>
+            <td>" . $row['id'] . "</td>
+            <td>" . $row['Name'] . "</td>
+            <td>" . $row['Address'] . "</td>
+            <td>" . $row['Phone'] . "</td>
+            <td>" . $row['Email'] . "</td>
+            <td>
+                &nbsp;
+                <form method='POST' action=''>
+                    <input type='hidden' name='id_eliminar' value='" . $row['id'] . "'>
+                    <button type='submit' name='eliminar'>Eliminar</button>
+                </form>
+                
+                &nbsp;
+                <a href='ProvInven.php?id=" . $row['id'] . "'>Añadir un Inventario</a>
+            </td>
+        </tr>";
+    }
 
-              // Cerrar la conexión a la base de datos
-              $conexion->close();
-              ?>
+    echo "</table>";
+} else {
+    echo "No hay datos en la tabla suppliers.";
+}
+
+// Cerrar la conexión a la base de datos
+$conexion->close();
+?>
+
+
 
 
 

@@ -32,21 +32,29 @@
         <i class="fas fa-desktop"></i>
         <span>Inicio</span>
       </a>
-      <a href="../AgregarCarwash/DashBranch.php">
+      <a href="">
         <i class='fas fa-shopping-cart'></i>
         <span>Agregar Carwash</span>
       </a>
-      <a href="#">
+      <a href="../AgregarAdmin/DashAdmin.php">
         <i class="fas fa-cogs"></i>
         <span>Agregar Administrador</span>
       </a>
-      <a href="#">
+      <a href="../AgregarE/DashE.php">
         <i class="fas fa-table"></i>
         <span>Agregar Empleado</span>
       </a>
-      <a href="#">
+      <a href="../AgregarP/DashProv.php">
         <i class="fas fa-th"></i>
         <span>Agregar Proveedor</span>
+      </a>
+      <a href="../AgregarAlmacen/DashAlma.php">
+        <i class="fas fa-th"></i>
+        <span>Agregar Almacen</span>
+      </a>
+      <a href="../AgregarInven/DashInven.php">
+        <i class="fas fa-th"></i>
+        <span>Agregar Inventario</span>
       </a>
       <a href="#">
         <i class="fas fa-info-circle"></i>
@@ -56,11 +64,13 @@
         <i class="fas fa-sliders-h"></i>
         <span>Settings</span>
       </a>
+      
+
     </div>
 
     <div class="Contenedor">
       <div class="content-form">
-      <button id="btn-abrir">Abrir modal</button>
+      <button id="btn-abrir">listar</button>
 
         <h2>Add Employees</h2>
 
@@ -101,6 +111,8 @@
     <div id="modal" class="modal">
   <div class="content-modal">
   <button class="close">Cerrar</button>
+  <button><a href="CarEmploye.php">Listado de Empleados ya Asignados</a></button>
+  
   <div class="lista-empleados">
             <?php
             require '../conexion.php';
@@ -137,12 +149,13 @@
                         <td>" . $row['Shift'] . "</td>
                         <td>" . $row['Position'] . "</td>
                         <td>
-                            <a href='editar_empleado.php?id=" . $row['EmployeeID'] . "'>Editar</a>
+                            <a href='CarEmploye.php?employeeID=" . $row['EmployeeID'] . "'>Añadir Carwash</a>
                             &nbsp;
                             <a href='eliminar_empleado.php?id=" . $row['EmployeeID'] . "'>Eliminar</a>
                         </td>
-                    </tr>";
-              }
+                      </tr>";
+            }
+            
 
               echo "</table>";
             } else {
@@ -152,6 +165,7 @@
             // Cerrar la conexión a la base de datos
             $conexion->close();
             ?>
+                
       </div>
 
 

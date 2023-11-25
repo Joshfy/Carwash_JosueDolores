@@ -3,7 +3,7 @@
   <head>
     <title>Dashboard Inicio</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-      <link rel="stylesheet" href="./css/Dash.css">
+      <link rel="stylesheet" href="./DashInven.css">
     </head>
   <body>
     <div class="dashboard">
@@ -26,80 +26,124 @@
             <img src="https://i.pinimg.com/736x/f2/b1/61/f2b1618c5c371bdab6073571f6e8b007.jpg" class="profile_image" alt=""/>
             <h4>Josue</h4>
         </div>
-        <a href="Dashboard.php">
+        <a href="../Dashboard.php">
         <i class="fas fa-desktop"></i>
         <span>Inicio</span>
-        </a>
-        <a href="./AgregarCarwash/DashBranch.php">
+      </a>
+      <a href="">
         <i class='fas fa-shopping-cart'></i>
         <span>Agregar Carwash</span>
-        </a>
-        <a href="./AgregarAdmin/DashAdmin.php">
+      </a>
+      <a href="../AgregarAdmin/DashAdmin.php">
         <i class="fas fa-cogs"></i>
         <span>Agregar Administrador</span>
-        </a>
-        <a href="./AgregarE/DashE.php">
+      </a>
+      <a href="../AgregarE/DashE.php">
         <i class="fas fa-table"></i>
         <span>Agregar Empleado</span>
-        </a>
-        <a href="./AgregarP/DashProv.php">
+      </a>
+      <a href="../AgregarP/DashProv.php">
         <i class="fas fa-th"></i>
         <span>Agregar Proveedor</span>
-   
-        </a>
-        <a href="./AgregarAlmacen/DashAlma.php">
+      </a>
+      <a href="../AgregarAlmacen/DashAlma.php">
         <i class="fas fa-th"></i>
         <span>Agregar Almacen</span>
-        </a>
-        <a href="./AgregarInven/DashInven.php">
+      </a>
+      <a href="../AgregarInven/DashInven.php">
         <i class="fas fa-th"></i>
         <span>Agregar Inventario</span>
-        <a href="#">
+      </a>
+      <a href="#">
         <i class="fas fa-info-circle"></i>
         <span>About</span>
-        </a>
-        <a href="#">
+      </a>
+      <a href="#">
         <i class="fas fa-sliders-h"></i>
         <span>Settings</span>
-        </a>
+      </a>
+      
+
        </div> 
 
         <div class="Contenedor">
           <div class="content-form">
-          <div id="content">
-          <h2>Estamos en el Home</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque accusamus possimus
-            porro at voluptatum perferendis earum sequi distinctio? Rerum modi minima
-            expedita quasi eligendi voluptas debitis earum quibusdam ad cupiditate.
-          </p>
-          <div id="columns">
-            <div class="column">
-              <h3>Productos Totales</h3>
-              <p class="neon-number" id="productos">0</p>
-            </div>
-            <div class="column">
-              <h3>Usuarios</h3>
-              <p class="neon-number" id="usuarios">0</p>
-            </div>
-            <div class="column">
-              <h3>Ventas Realizadas</h3>
-              <p class="neon-number" id="ventas">0</p>
-            </div>
+          <button id="btn-abrir">listar</button>
+
+          <div id="content-form">
+          <h2>Formulario de Inventario</h2>
+          <form action="GuardarInven.php" method="post">
+              <label for="idProduct">ID del Producto:</label>
+              <input type="number" id="idProduct" name="IDproduct" required><br><br>
+
+              <label for="quantity">Cantidad:</label>
+              <input type="number" id="quantity" name="Quantity" required><br><br>
+
+              <label for="costs">Costo:</label>
+              <input type="number" id="costs" name="Costs" required><br><br>
+
+              <label for="idProductReference">ID del Producto (Referencia de Store):</label>
+              <input type="number" id="idProductReference" name="IDproducts" required><br><br>
+
+              <input type="submit" value="Guardar Inventario">
+          </form>
+
+
+
           </div>
              
-          <button id="btn-abrir">Abrir modal</button>
 
-            <div id="modal" class="modal">
+            
+
+        </div>
+        <div id="modal" class="modal">
               <div class="content-modal">
                <button class="close">Cerrar</button>
+               <div class="list-products">
+                <h2>Lista de productos  </h2>
+               <?php
+           require '../conexion.php';
+           
+           // Realizar la consulta para obtener todos los registros del inventario
+           $sql = "SELECT * FROM inventory";
+           $result = $conexion->query($sql);
+           
+           // Verificar si hay resultados
+           if ($result->num_rows > 0) {
+               // Imprimir la tabla
+               echo "<table border='1'>
+                       <tr>
+                           <th>ID del Producto</th>
+                           <th>Cantidad</th>
+                           <th>Costo</th>
+                           <th>ID del Producto (Referencia de Store)</th>
+                       </tr>";
+           
+               // Iterar sobre los resultados y mostrar cada fila en la tabla
+               while ($row = $result->fetch_assoc()) {
+                   echo "<tr>
+                           <td>" . $row["IDproduct"] . "</td>
+                           <td>" . $row["Quantity"] . "</td>
+                           <td>" . $row["Costs"] . "</td>
+                           <td>" . $row["IDproducts"] . "</td>
+                       </tr>";
+               }
+           
+               echo "</table>";
+           } else {
+               echo "No hay datos en el inventario.";
+           }
+           
+           // Cerrar la conexión
+           $conexion->close();
+           ?>
+           
+               </div>
 
 
               </div>
  
             </div>
-
-        </div>
 
           
              

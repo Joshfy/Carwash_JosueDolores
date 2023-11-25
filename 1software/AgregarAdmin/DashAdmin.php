@@ -32,11 +32,11 @@
         <i class="fas fa-desktop"></i>
         <span>Inicio</span>
       </a>
-      <a href="../AgregarCarwash/DashBranch.php">
+      <a href="">
         <i class='fas fa-shopping-cart'></i>
         <span>Agregar Carwash</span>
       </a>
-      <a href="./DashAdmin.php">
+      <a href="../AgregarAdmin/DashAdmin.php">
         <i class="fas fa-cogs"></i>
         <span>Agregar Administrador</span>
       </a>
@@ -44,9 +44,17 @@
         <i class="fas fa-table"></i>
         <span>Agregar Empleado</span>
       </a>
-      <a href="#">
+      <a href="../AgregarP/DashProv.php">
         <i class="fas fa-th"></i>
         <span>Agregar Proveedor</span>
+      </a>
+      <a href="../AgregarAlmacen/DashAlma.php">
+        <i class="fas fa-th"></i>
+        <span>Agregar Almacen</span>
+      </a>
+      <a href="../AgregarInven/DashInven.php">
+        <i class="fas fa-th"></i>
+        <span>Agregar Inventario</span>
       </a>
       <a href="#">
         <i class="fas fa-info-circle"></i>
@@ -56,6 +64,8 @@
         <i class="fas fa-sliders-h"></i>
         <span>Settings</span>
       </a>
+      
+
     </div>
 
     <div class="Contenedor">

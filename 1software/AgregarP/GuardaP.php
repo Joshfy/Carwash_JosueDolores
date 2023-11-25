@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Preparar la consulta SQL para insertar datos en la tabla
     $sql = "INSERT INTO   suppliers   (id, Name, Address, Phone, Email) 
-            VALUES ('$ID', '$Name', '$Address', '$Phone', '$Email')";
+            VALUES ('$id', '$Name', '$Address', '$Phone', '$Email')";
 
     // Ejecutar la consulta
     if ($conexion->query($sql) === TRUE) {

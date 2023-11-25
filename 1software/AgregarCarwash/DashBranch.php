@@ -37,13 +37,21 @@
         <i class="fas fa-cogs"></i>
         <span>Agregar Administrador</span>
       </a>
-      <a href="#">
+      <a href="../AgregarE/DashE.php">
         <i class="fas fa-table"></i>
         <span>Agregar Empleado</span>
       </a>
-      <a href="#">
+      <a href="../AgregarP/DashProv.php">
         <i class="fas fa-th"></i>
         <span>Agregar Proveedor</span>
+      </a>
+      <a href="../AgregarAlmacen/DashAlma.php">
+        <i class="fas fa-th"></i>
+        <span>Agregar Almacen</span>
+      </a>
+      <a href="../AgregarInven/DashInven.php">
+        <i class="fas fa-th"></i>
+        <span>Agregar Inventario</span>
       </a>
       <a href="#">
         <i class="fas fa-info-circle"></i>
