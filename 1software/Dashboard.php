@@ -30,6 +30,10 @@
         <i class="fas fa-desktop"></i>
         <span>Inicio</span>
         </a>
+        <a href="./Realizar Ventas/DashVC.php">
+        <i class='fas fa-shopping-cart'></i>
+        <span>Realizar Venta</span>
+        </a>
         <a href="./AgregarCarwash/DashBranch.php">
         <i class='fas fa-shopping-cart'></i>
         <span>Agregar Carwash</span>
